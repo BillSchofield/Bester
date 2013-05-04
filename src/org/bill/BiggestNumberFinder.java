@@ -3,10 +3,16 @@ package org.bill;
 import java.util.Set;
 
 public class BiggestNumberFinder {
+    private Comparison comparison;
+
+    public BiggestNumberFinder(Comparison comparison) {
+        this.comparison = comparison;
+    }
+
     public Integer find(Set<Integer> numbers) {
-        Integer champion = Integer.MIN_VALUE;
+        Integer champion = comparison.worstValue();
         for(Integer challenger : numbers){
-            if (challenger > champion){
+            if (comparison.isFirstBetterThanSecond(challenger, champion)){
                 champion = challenger;
             }
         }

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 
 public class BiggestNumberFinderTest {
 
-    BiggestNumberFinder finder = new BiggestNumberFinder();
+    BiggestNumberFinder finder = new BiggestNumberFinder(new BiggerIntegerComparison());
     static final Integer biggestNumber = 2;
     static final Integer smallestNumber = 1;
 
